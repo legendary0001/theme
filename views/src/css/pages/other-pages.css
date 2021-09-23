@@ -19,13 +19,11 @@ File: scss
 FAQs Page
 ******************/
 .minimal-faq .card {
-  border: 0px; }
+   }
   .minimal-faq .card .card-header {
-    background: #ffffff;
-    padding: 20px 0;
     margin-top: 10px; }
   .minimal-faq .card .card-body {
-    padding: 15px 0px; }
+    }
 
 /*******************
 Seach listing Page
