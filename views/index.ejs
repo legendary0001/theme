@@ -45,7 +45,6 @@
                <div class="row">
                   <div class="col-lg-12">
                      <div class="card">
-                        <div class="up-img" style="background-image:url('<%=themeConfig.index.card.image || "https://assistants.ga/img/banner/home-banner.jpg"%>')"></div>
                         <div class="card-body">
                            <h5 class=" card-title"><%-themeConfig.index.card.title || "config.index.card.title"%></h5>
                            <p class="m-b-0 m-t-20" id="index_cardDescription"><%-themeConfig.index.card.description || "config.index.card.description"%></p>
@@ -64,22 +63,7 @@
                         </div>
                      </div>
                   </div>
-                  <div class="col-lg-6">
-                     <div class="card">
-                        <div class="card-body">
-                           <h5 class="card-title"><%=themeConfig.index.feeds.title%></h5>
-                           <ul class="feeds">
-                              <%themeConfig.index.feeds.list.forEach(f=>{%>
-                              <li>
-                                 <div class="<%=f.bg%>"><i class="<%=f.icon%>"></i></div>
-                                 <%-f.text%> <span class="text-muted"><%-f.timeText%></span>
-                              <li>
-                                 <%})%>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+                </div>
             </div>
             <%-include('partials/footer.ejs')%>
          </div>
