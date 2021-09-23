@@ -1,5 +1,5 @@
 {
-  "name": "theme-legendarybot",
+  "name": "@legendary/theme-legendarybot",
   "version": "0.0.3",
   "description": "Discord-dashboard free theme.",
   "main": "index.js",
