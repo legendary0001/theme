@@ -1,0 +1,210 @@
+<!--
+
+=========================================================
+* Now UI Dashboard - v1.5.0
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/now-ui-dashboard
+* Copyright 2019 Creative Tim (http://www.creative-tim.com)
+
+* Designed by www.invisionapp.com Coded by www.creative-tim.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href=<%=themeConfig.information.imageFavicon%>>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    <%=themeConfig.information.websiteTitle%> | Manage Guilds
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+    name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- CSS Files -->
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <link href="./src/css/theme.css" id="theme" rel="stylesheet">
+</head>
+
+<body class="">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="blue">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+      <div class="logo">
+        <a href=<%=themeConfig.information.websiteUrl%> class="simple-text logo-mini">
+          <img style="border-radius: 100%;" src=<%=themeConfig.information.iconURL%>>>
+        </a>
+        <a href=<%=themeConfig.information.websiteUrl%> class="simple-text logo-normal">
+          <%=themeConfig.information.websiteName%>
+        </a>
+      </div>
+      <div class="sidebar-wrapper" id="sidebar-wrapper">
+        <ul class="nav">
+          <li>
+            <a href="../">
+              <img style="color: rgb(56, 173, 255); position: absolute; margin-left: 8px; margin-top: 2px;" src="./src/images/speed_white_24dp.svg">
+              <p style="margin-left: 40px;">Dashboard</p>
+            </a>
+          </li>
+          <li class="active ">
+            <a href="#">
+              <img style="color: rgb(56, 173, 255); position: absolute; margin-left: 8px; margin-top: 2px;" src="./src/images/manage_accounts_white_24dp.svg">
+              <p style="margin-left: 40px;">Manage Guilds</p>
+            </a>
+          </li>
+          <li>
+            <a href="../commands">
+              <img style="color: rgb(56, 173, 255); position: absolute; margin-left: 8px; margin-top: 2px;" src="./src/images/reorder_white_24dp.svg">
+              <p style="margin-left: 40px;">Commands</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel" id="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
+              <div class="container-fluid">
+                <div class="navbar-wrapper">
+                  <div class="navbar-toggle">
+                    <button type="button" class="navbar-toggler">
+                      <span class="navbar-toggler-bar bar1"></span>
+                      <span class="navbar-toggler-bar bar2"></span>
+                      <span class="navbar-toggler-bar bar3"></span>
+                    </button>
+                  </div>
+                  <a class="navbar-brand" href="#">Manage Guilds</a>
+                </div>
+                <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <li class="nav-item dropdown u-pro">
+                          <%if(req.session.user){%>
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img style="width: 25px; height: 25px; margin-right: 5px;" src="<%=req.session.user.avatarURL || "https://w5fc.org/wp-content/uploads/2021/05/s9biyhs4lix61.jpg"%>" alt="user" class="" /><span class="profile-pic"><b><%=req.session.user.username%> </b><span style="cursor:pointer;color:#2CA8FF;" onclick="window.location = '/discord/logout'"> &nbsp;&nbsp;Log out</span> &nbsp;&nbsp;</span></a>
+                        <%}else{%>
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img style="width: 25px; height: 25px; margin-right: 5px;" src="https://w5fc.org/wp-content/uploads/2021/05/s9biyhs4lix61.jpg" alt="user" class="" /> <span class="profile-pic">  </b><span style="cursor:pointer;color:#2CA8FF;" onclick="window.location = '/discord'">Log in</span> &nbsp;&nbsp;</span></a>
+                        <%}%>
+                      </li>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+            <!-- End Navbar -->
+      <div class="panel-header panel-header-sm">
+      </div>
+      <div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title"><%=themeConfig.guilds.cardTitle%></h4>
+                <p class="category"><%=themeConfig.guilds.cardDescription%></p>
+              </div>
+              <div class="card-body">
+                <table class="table vm no-th-brd pro-of-month">
+                  <thead>
+                     <tr>
+                        <th colspan="2">Guild</th>
+                        <th>Action</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <%
+                        for(var i in req.session.guilds){%>
+                     <%if((req.session.guilds[i].permissions & 0x00000020) == 0x00000020){%> 
+                     <%if(!bot.guilds.cache.get(req.session.guilds[i].id)){
+                        %>
+                     <tr>
+                        <td style="width:50px;"><img class="media-object round" onerror="this.src = `https://blog.logomyway.com/wp-content/uploads/2020/12/discord-mascot.png`;" src="https://cdn.discordapp.com/icons/<%=req.session.guilds[i].id%>/<%=req.session.guilds[i].icon%>.png" alt="..."></td>
+                        <td>
+                           <h6><%=req.session.guilds[i].name%></h6>
+                           <small class="text-muted">Not in the server</small>
+                        </td>
+                        <td><a href="/invite" role="button" style="margin-left: 10px; color: #4496d1;" class="btn-small">Invite bot</a></td>
+                     </tr>
+                     <%}else{%>
+                     <tr>
+                        <td style="width:50px;"><img class="media-object round" onerror="this.src = `https://blog.logomyway.com/wp-content/uploads/2020/12/discord-mascot.png`;" src="https://cdn.discordapp.com/icons/<%=req.session.guilds[i].id%>/<%=req.session.guilds[i].icon%>.png" alt="..."></td>
+                        <td>
+                           <h6><%=req.session.guilds[i].name%></h6>
+                           <small class="text-muted">In the server</small>
+                        </td>
+                        <td><a href="/guild/<%=req.session.guilds[i].id%>" role="button" style="margin-left: 10px; color: #155b8d;" class="btn-small">Manage bot</a></td>
+                     </tr>
+                     <%}%>
+                     <%}%>
+                     <%}%>
+                  </tbody>
+               </table>
+               <p style="color: rgb(199, 196, 196);">If you cant see any of your servers try <a style="color: #2CA8FF;" href="../manage">Logging in</a> again.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class=" container-fluid ">
+          <nav>
+            <ul>
+              <li>
+                <a href="../">
+                  Dashboard
+                </a>
+              </li>
+              <li>
+                <a href="#" class="bluey">
+                  Manage Guilds
+                </a>
+              </li>
+              <li>
+                <a href="../commands/">
+                  Commands
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="copyright" id="copyright">
+            &copy;
+            <script>
+              document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
+            </script>, Created by <a href='<%=themeConfig.information.websiteUrl%>' target="_blank" class="bluey"><%=themeConfig.information.createdBy%></a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <!--   Core JS Files   -->
+  <script src="../assets/js/core/jquery.min.js"></script>
+  <script src="../assets/js/core/popper.min.js"></script>
+  <script src="../assets/js/core/bootstrap.min.js"></script>
+  <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- Chart JS -->
+  <script src="../assets/js/plugins/chartjs.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="../assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
+  <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
+  <script src="../assets/demo/demo.js"></script>
+</body>
+
+</html>

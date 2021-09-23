@@ -1,0 +1,77 @@
+.card {
+    border-radius: 15px !important;
+    background-color: rgb(24, 26, 27) !important;
+}
+
+.content {
+    background-color: rgb(32, 34, 36) !important;
+}
+
+.stats {
+    color: #9A9A9A !important; 
+}
+
+.card-title {
+    color: rgb(199, 196, 196);
+}
+
+.sidebar[data-color="blue"]:after, .off-canvas-sidebar[data-color="blue"]:after {
+    background: rgb(24, 26, 27);
+}
+
+.sidebar .nav li.active>a, .off-canvas-sidebar .nav li.active>a {
+    background-color: rgb(32, 34, 36);
+    box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.1);
+}
+
+.round {
+    border-radius: 15px !important;
+}
+
+.greyey {
+    color: #9A9A9A;
+}
+
+.footer {
+    background-color: rgb(24, 26, 27) !important;
+    color: rgb(199, 196, 196);
+}
+
+.bluey {
+    color: #2CA8FF !important;
+}
+
+
+th {
+    color: #2CA8FF !important;
+}
+
+td {
+    color: #9A9A9A;
+}
+
+code {
+    padding: .2rem .4rem;
+    font-size: 90%;
+    color: #46aef8;
+    background-color: rgb(45, 48, 49);
+    border-radius: .25rem;
+}
+
+.btn-small {
+    color: #46aef8;
+}
+
+:root {
+    color-scheme: dark;
+}
+
+.hidden {
+    display: none;
+}
+
+.main-panel>.content {
+    padding: 0 30px 30px !important;
+    min-height: calc(100vh - 174px) !important;
+    margin-top: -30px !important;
+}

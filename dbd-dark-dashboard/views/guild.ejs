@@ -1,0 +1,315 @@
+<!--
+
+=========================================================
+* Now UI Dashboard - v1.5.0
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/now-ui-dashboard
+* Copyright 2019 Creative Tim (http://www.creative-tim.com)
+
+* Designed by www.invisionapp.com Coded by www.creative-tim.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href=<%=themeConfig.information.imageFavicon%>>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    <%=themeConfig.information.websiteTitle%> | Manage Guilds
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+    name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- CSS Files -->
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <link href="./src/css/theme.css" id="theme" rel="stylesheet">
+  <style>
+    input.col-md-12 {
+    border-radius: 15px !important;
+}
+  </style>
+</head>
+
+<body class="">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="blue">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+      <div class="logo">
+        <a href=<%=themeConfig.information.websiteUrl%> class="simple-text logo-mini">
+          <img style="border-radius: 100%;" src=<%=themeConfig.information.iconURL%>>
+        </a>
+        <a href=<%=themeConfig.information.websiteUrl%> class="simple-text logo-normal">
+          <%=themeConfig.information.websiteName%>
+        </a>
+      </div>
+      <div class="sidebar-wrapper" id="sidebar-wrapper">
+        <ul class="nav">
+          <li>
+            <a href="../../">
+              <img style="color: rgb(56, 173, 255); position: absolute; margin-left: 8px; margin-top: 2px;" src="./src/images/speed_white_24dp.svg">
+              <p style="margin-left: 40px;">Dashboard</p>
+            </a>
+          </li>
+          <li class="active ">
+            <a href="#">
+              <img style="color: rgb(56, 173, 255); position: absolute; margin-left: 8px; margin-top: 2px;" src="./src/images/manage_accounts_white_24dp.svg">
+              <p style="margin-left: 40px;">Manage Guilds</p>
+            </a>
+          </li>
+          <li>
+            <a href="../../commands">
+              <img style="color: rgb(56, 173, 255); position: absolute; margin-left: 8px; margin-top: 2px;" src="./src/images/reorder_white_24dp.svg">
+              <p style="margin-left: 40px;">Commands</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel" id="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
+              <div class="container-fluid">
+                <div class="navbar-wrapper">
+                  <div class="navbar-toggle">
+                    <button type="button" class="navbar-toggler">
+                      <span class="navbar-toggler-bar bar1"></span>
+                      <span class="navbar-toggler-bar bar2"></span>
+                      <span class="navbar-toggler-bar bar3"></span>
+                    </button>
+                  </div>
+                  <a class="navbar-brand" href="#">Manage Guilds</a>
+                </div>
+                <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <li class="nav-item dropdown u-pro">
+                          <%if(req.session.user){%>
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img style="width: 25px; height: 25px; margin-right: 5px;" src="<%=req.session.user.avatarURL || "https://w5fc.org/wp-content/uploads/2021/05/s9biyhs4lix61.jpg"%>" alt="user" class="" /><span class="profile-pic"><b style="color: white !important;"><%=req.session.user.username%> </b><span style="cursor:pointer;color:#2CA8FF;" onclick="window.location = '/discord/logout'"> &nbsp;&nbsp;Log out</span> &nbsp;&nbsp;</span></a>
+                        <%}else{%>
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img style="width: 25px; height: 25px; margin-right: 5px;" src="https://w5fc.org/wp-content/uploads/2021/05/s9biyhs4lix61.jpg" alt="user" class="" /> <span class="profile-pic">  </b><span style="cursor:pointer;color:#2CA8FF;" onclick="window.location = '/discord'">Log in</span> &nbsp;&nbsp;</span></a>
+                        <%}%>
+                      </li>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+            <!-- End Navbar -->
+      <div class="panel-header panel-header-sm">
+      </div>
+      <div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title"><%=themeConfig.guildSettings.cardTitle%></h4>
+                <p class="category"><%=themeConfig.guildSettings.cardDescription%></p>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive no-wrap">
+                  <nav>
+                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <%
+                           let i22 = 0;
+                           settings.forEach(s=>{
+                           i22++;%>
+                        <a style="color: #2CA8FF !important;" class="nav-item nav-link<%if(i22==1){%> active<%}%>" id="<%=s.categoryId%>-tab" data-toggle="tab" href="#<%=s.categoryId%>" role="tab" aria-controls="<%=s.categoryId%>" aria-selected="true"><%=s.categoryName%></a>
+                        <%})
+                           %>
+                     </div>
+                  </nav>
+                  <%if(req.query.success){%>
+                  <div id="alert_success" style="padding-top: 5px;">
+                     <div style="background-color: #2CA8FF !important;" class="alert alert-dismissible alert-success" onclick="document.getElementById('alert_success').innerHTML=''">
+                        <strong>Success!</strong> All changes saved! <u>Click to close</u>
+                     </div>
+                  </div>
+                  <%}%>
+                  <div class="tab-content" id="nav-tabContent">
+                     <%
+                        let i222 = 0;
+                        settings.forEach(s=>{
+                        i222++;%>
+                     <div class="tab-pane fade<%if(i222==1){%> show active<%}%>" id="<%=s.categoryId%>" role="tabpanel" aria-labelledby="<%=s.categoryId%>-tab">
+                        <form method="POST" action="/settings/update/<%=req.params.id%>/<%=s.categoryId%>">
+                           <%
+                              s.categoryOptionsList.forEach(option=>{%>
+                           <%
+                              if(option.optionType.type == "select"){%>
+                                <h4 class="card-title"><%=option.optionName%></h4>
+                                <p class="category"><%=option.optionDescription%></p>
+                           <select class="col-md-12" <%if(option.optionType.disabled){%>disabled<%}%> name="<%=option.optionId%>" class="col-md-12" style="height:30px;">
+                              <%
+                                 let ioo = 0;
+                                   option.optionType.data.values.forEach(value=>{%>
+                              <option value="<%=value%>" <%if(actual[s.categoryId][option.optionId] == value){%>selected<%}%>><%=option.optionType.data.keys[ioo]%></option>
+                              <%
+                                 ioo++;
+                                 })%>
+                           </select>
+                           <%}else if(option.optionType.type == "input"){
+                              %>
+                              <h4 class="card-title"><%=option.optionName%></h4>
+                              <p class="category"><%=option.optionDescription%></p>
+                           <input style="border:none;height:30px;" class="col-md-12" name="<%=option.optionId%>" <%if(option.optionType.required){%>required<%}%> <%if(option.optionType.disabled){%>disabled<%}%> placeholder="<%=option.optionType.data%>" <%if(actual[s.categoryId][option.optionId]){%>value="<%=actual[s.categoryId][option.optionId]%>"<%}%> <%if(option.optionType.min){%>minlength="<%=option.optionType.min%>"<%}%> <%if(option.optionType.max){%>maxlength="<%=option.optionType.max%>"<%}%>/>
+                           <%} else if(option.optionType.type == "textarea"){%>
+                           <h4><%=option.optionName%></h4>
+                           <%=option.optionDescription%><br>
+                           <textarea name="<%=option.optionId%>" <%if(option.optionType.required){%>required<%}%> <%if(option.optionType.disabled){%>disabled<%}%> placeholder="<%=option.optionType.data%>" <%if(actual[s.categoryId][option.optionId]){%>value="<%=actual[s.categoryId][option.optionId]%>"<%}%> <%if(option.optionType.min){%>minlength="<%=option.optionType.min%>"<%}%> <%if(option.optionType.max){%>maxlength="<%=option.optionType.max%>"<%}%> rows="4" class="col-md-12"><%if(actual[s.categoryId][option.optionId]){%><%=actual[s.categoryId][option.optionId]%><%}%></textarea>
+                           <%}else if(option.optionType.type == "switch"){%>
+                           <h4><%=option.optionName%></h4>
+                           <%=option.optionDescription%><br>
+                           <div class="primary-checkbox " style="align-items: center;">
+                              <%if(actual[s.categoryId][option.optionId] == null || actual[s.categoryId][option.optionId] == undefined){%>
+                              <%if(option.optionType.data == false && !option.optionType.disabled){%>
+                              <input type="checkbox" id="ffff" name="<%=option.optionId%>" />
+                              <%} else if(option.optionType.data == true && !option.optionType.disabled){%>
+                              <input type="checkbox" id="ffff" name="<%=option.optionId%>" checked />
+                              <%} else if(option.optionType.data == true && option.optionType.disabled){%>
+                              <input type="checkbox" id="ffff" checked disabled />
+                              <%} else if(option.optionType.data == false && option.optionType.disabled){%>
+                              <input type="checkbox" id="ffff" disabled />
+                              <%}%>
+                              <%}else{%>
+                              <%if(actual[s.categoryId][option.optionId] == false && !option.optionType.disabled){%>
+                              <input type="checkbox" id="ffff" name="<%=option.optionId%>" />
+                              <%} else if(actual[s.categoryId][option.optionId] == true && !option.optionType.disabled){%>
+                              <input type="checkbox" id="ffff" name="<%=option.optionId%>" checked />
+                              <%} else if(actual[s.categoryId][option.optionId] == true && option.optionType.disabled){%>
+                              <input type="checkbox" id="ffff" checked disabled />
+                              <%} else if(actual[s.categoryId][option.optionId] == false && option.optionType.disabled){%>
+                              <input type="checkbox" id="ffff" disabled />
+                              <%}%>
+                              <%}%>
+                              <label class="form-check-label" for="ffff" style="padding-left: 0 !important;top:13px;left:3px;background-color: rgb(199, 199, 199);">
+                              </label>
+                           </div>
+                           <%}else if(option.optionType.type == "channelsSelect"){%>
+                           <h4><%=option.optionName%></h4>
+                           <%=option.optionDescription%><br>
+                           <select <%if(option.optionType.disabled){%>disabled<%}%> name="<%=option.optionId%>" class="col-md-12" style="height:30px;">
+                              <%
+                                 let ioooooo = 0;
+                                 let functiona = option.optionType.function(bot, guildid);
+                                 functiona.values.forEach(value=>{%>
+                              <option value="<%=value%>" <%if(actual[s.categoryId][option.optionId] == value){%>selected<%}%>><%=functiona.keys[ioooooo]%></option>
+                              <%
+                                 ioooooo++;
+                                 })%>
+                           </select>
+                           <%}else if(option.optionType.type =="rolesSelect"){%>
+                           <h4><%=option.optionName%></h4>
+                           <%=option.optionDescription%><br>
+                           <select <%if(option.optionType.disabled){%>disabled<%}%> name="<%=option.optionId%>" class="col-md-12" style="height:30px;">
+                              <%
+                                 let iooooooo = 0;
+                                 let functiona = option.optionType.function(bot, guildid);
+                                 functiona.values.forEach(value=>{%>
+                              <option value="<%=value%>" <%if(actual[s.categoryId][option.optionId] == value){%>selected<%}%>><%=functiona.keys[iooooooo]%></option>
+                              <%
+                                 iooooooo++;
+                                 })%>
+                           </select>
+                           <%}else if(option.optionType.type =="colorSelect"){%>
+                              <h4><%=option.optionName%></h4>
+                              <%=option.optionDescription%><br>
+                              <input type="color" id="<%=option.optionId%>" name="<%=option.optionId%>"
+                              value="<%=actual[s.categoryId][option.optionId] || option.optionType.data || "#ffffff"%>" <%if(option.optionType.disabled){%>disabled<%}%>>
+                            <%}%>
+                           <%})
+                              %>
+                           <br><br>
+                           <button style="background-color: #2CA8FF; border-radius: 20px;" class="btn btn-primary" type="submit">Submit</button>
+                        </form>
+                     </div>
+                     <%})
+                        %>
+                  </div>
+               </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class=" container-fluid ">
+          <nav>
+            <ul>
+              <li>
+                <a href="../">
+                  Dashboard
+                </a>
+              </li>
+              <li>
+                <a href="#" class="bluey">
+                  Manage Guilds
+                </a>
+              </li>
+              <li>
+                <a href="../commands/">
+                  Commands
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="copyright" id="copyright">
+            &copy;
+            <script>
+              document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
+            </script>, Created by <a href='<%=themeConfig.information.websiteUrl%>' target="_blank" class="bluey"><%=themeConfig.information.createdBy%></a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <!--   Core JS Files   -->
+  <script src="../assets/js/core/jquery.min.js"></script>
+  <script src="../assets/js/core/popper.min.js"></script>
+  <script src="../assets/js/core/bootstrap.min.js"></script>
+  <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- Chart JS -->
+  <script src="../assets/js/plugins/chartjs.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="../assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
+  <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
+  <script src="../assets/demo/demo.js"></script>
+  <script src="assets/node_modules/jquery/jquery.min.js"></script>
+  <script src="assets/node_modules/bootstrap/js/popper.min.js"></script>
+  <script src="assets/node_modules/bootstrap/js/bootstrap.min.js"></script>
+  <script src="js/perfect-scrollbar.jquery.min.js"></script>
+  <script src="js/waves.js"></script>
+  <script src="js/sidebarmenu.js"></script>
+  <script src="js/custom.min.js"></script>
+  <script>
+     function removeAllChildNodes(parent) {
+         for(let i in [0,1,2,3]){
+             parent.removeChild(parent.firstChild);
+         }
+     }
+     const container = document.getElementById('removeDiv');
+     removeAllChildNodes(container);
+  </script>
+</body>
+
+</html>

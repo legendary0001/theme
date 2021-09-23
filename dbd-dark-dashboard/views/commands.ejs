@@ -1,0 +1,404 @@
+<!--
+
+=========================================================
+* Now UI Dashboard - v1.5.0
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/now-ui-dashboard
+* Copyright 2019 Creative Tim (http://www.creative-tim.com)
+
+* Designed by www.invisionapp.com Coded by www.creative-tim.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href=<%=themeConfig.information.imageFavicon%>>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    <%=themeConfig.information.websiteTitle%> | Commands
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+    name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- CSS Files -->
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <link href="./src/css/theme.css" id="theme" rel="stylesheet">
+
+</head>
+
+<body class="">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="blue">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+      <div class="logo">
+        <a href=<%=themeConfig.information.websiteUrl%> class="simple-text logo-mini">
+          <img style="border-radius: 100%;" src=<%=themeConfig.information.iconURL%>>
+        </a>
+        <a href=<%=themeConfig.information.websiteUrl%> class="simple-text logo-normal">
+          <%=themeConfig.information.websiteName%>
+        </a>
+      </div>
+      <div class="sidebar-wrapper" id="sidebar-wrapper">
+        <ul class="nav">
+          <li>
+            <a href="../">
+              <img style="color: rgb(56, 173, 255); position: absolute; margin-left: 8px; margin-top: 2px;" src="./src/images/speed_white_24dp.svg">
+              <p style="margin-left: 40px;">Dashboard</p>
+            </a>
+          </li>
+          <li>
+            <a href="../manage">
+              <img style="color: rgb(56, 173, 255); position: absolute; margin-left: 8px; margin-top: 2px;" src="./src/images/manage_accounts_white_24dp.svg">
+              <p style="margin-left: 40px;">Manage Guilds</p>
+            </a>
+          </li>
+          <li class="active ">
+            <a href="../commands">
+              <img style="color: rgb(56, 173, 255); position: absolute; margin-left: 8px; margin-top: 2px;" src="./src/images/reorder_white_24dp.svg">
+              <p style="margin-left: 40px;">Commands</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel" id="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
+              <div class="container-fluid">
+                <div class="navbar-wrapper">
+                  <div class="navbar-toggle">
+                    <button type="button" class="navbar-toggler">
+                      <span class="navbar-toggler-bar bar1"></span>
+                      <span class="navbar-toggler-bar bar2"></span>
+                      <span class="navbar-toggler-bar bar3"></span>
+                    </button>
+                  </div>
+                  <a class="navbar-brand" href="#">Commands</a>
+                </div>
+                <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <li class="nav-item dropdown u-pro">
+                          <%if(req.session.user){%>
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img style="width: 25px; height: 25px; margin-right: 5px;" src="<%=req.session.user.avatarURL || "https://w5fc.org/wp-content/uploads/2021/05/s9biyhs4lix61.jpg"%>" alt="user" class="" /><span class="profile-pic"><b><%=req.session.user.username%> </b><span style="cursor:pointer;color:#2CA8FF;" onclick="window.location = '/discord/logout'"> &nbsp;&nbsp;Log out</span> &nbsp;&nbsp;</span></a>
+                        <%}else{%>
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img style="width: 25px; height: 25px; margin-right: 5px;" src="https://w5fc.org/wp-content/uploads/2021/05/s9biyhs4lix61.jpg" alt="user" class="" /> <span class="profile-pic">  </b><span style="cursor:pointer;color:#2CA8FF;" onclick="window.location = '/discord'">Log in</span> &nbsp;&nbsp;</span></a>
+                        <%}%>
+                      </li>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+            <!-- End Navbar -->
+      <div class="panel-header panel-header-sm">
+      </div>
+      <div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title"><%=themeConfig.commands.categoryOne.category%></h4>
+                <p class="category"><%=themeConfig.commands.categoryOne.subTitle%></p>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table" id="table1">
+                    <thead class=" text-primary">
+                      <th style="color: #2CA8FF !important;">
+                        Name
+                      </th>
+                      <th style="color: #2CA8FF !important;">
+                        Command Usage
+                      </th>
+                      <th style="color: #2CA8FF !important;">
+                        Description
+                      </th>
+                      <th style="color: #2CA8FF !important;">
+                        Aliases
+                      </th>
+                    </thead>
+                    <tbody>
+                      <%themeConfig.commands.categoryOne.list.forEach((item)=>{%>
+                        <tr>
+                           <td><%=item.commandName%></td>
+                           <td><code><%=item.commandUsage%></code></td>
+                           <td><%=item.commandDescription%></td>
+                           <td><code><%=item.commandAlias%></code></td>
+                        </tr>
+                        <%})%>
+                   </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12" id="myDIV2">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title"><%=themeConfig.commands.categoryTwo.category%></h4>
+                <p class="category"><%=themeConfig.commands.categoryTwo.subTitle%></p>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead class=" text-primary">
+                      <th style="color: #2CA8FF !important;">
+                        Name
+                      </th>
+                      <th style="color: #2CA8FF !important;">
+                        Command
+                      </th>
+                      <th style="color: #2CA8FF !important;">
+                        Usage
+                      </th>
+                      <th style="color: #2CA8FF !important;">
+                        Aliases
+                      </th>
+                    </thead>
+                    <tbody>
+                      <%themeConfig.commands.categoryTwo.list.forEach((item)=>{%>
+                        <tr>
+                           <td><%=item.commandName%></td>
+                           <td><code><%=item.commandUsage%></code></td>
+                           <td><%=item.commandDescription%></td>
+                           <td><code><%=item.commandAlias%></code></td>
+                        </tr>
+                        <%})%>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12" id="myDIV3">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title"><%=themeConfig.commands.categoryThree.category%></h4>
+                <p class="category"><%=themeConfig.commands.categoryThree.subTitle%></p>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead class=" text-primary">
+                      <th style="color: #2CA8FF !important;">
+                        Name
+                      </th>
+                      <th style="color: #2CA8FF !important;">
+                        Command
+                      </th>
+                      <th style="color: #2CA8FF !important;">
+                        Usage
+                      </th>
+                      <th style="color: #2CA8FF !important;">
+                        Aliases
+                      </th>
+                    </thead>
+                    <tbody>
+                      <%themeConfig.commands.categoryThree.list.forEach((item)=>{%>
+                        <tr>
+                           <td><%=item.commandName%></td>
+                           <td><code><%=item.commandUsage%></code></td>
+                           <td><%=item.commandDescription%></td>
+                           <td><code><%=item.commandAlias%></code></td>
+                        </tr>
+                        <%})%>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12" id="myDIV4">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title"><%=themeConfig.commands.categoryFour.category%></h4>
+                <p class="category"><%=themeConfig.commands.categoryFour.subTitle%></p>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead class=" text-primary">
+                      <th style="color: #2CA8FF !important;">
+                        Name
+                      </th>
+                      <th style="color: #2CA8FF !important;">
+                        Command
+                      </th>
+                      <th style="color: #2CA8FF !important;">
+                        Usage
+                      </th>
+                      <th style="color: #2CA8FF !important;">
+                        Aliases
+                      </th>
+                    </thead>
+                    <tbody>
+                      <%themeConfig.commands.categoryFour.list.forEach((item)=>{%>
+                        <tr>
+                           <td><%=item.commandName%></td>
+                           <td><code><%=item.commandUsage%></code></td>
+                           <td><%=item.commandDescription%></td>
+                           <td><code><%=item.commandAlias%></code></td>
+                        </tr>
+                        <%})%>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12" id="myDIV5">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title"><%=themeConfig.commands.categoryFive.category%></h4>
+                <p class="category"><%=themeConfig.commands.categoryFive.subTitle%></p>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead class=" text-primary">
+                      <th style="color: #2CA8FF !important;">
+                        Name
+                      </th>
+                      <th style="color: #2CA8FF !important;">
+                        Command
+                      </th>
+                      <th style="color: #2CA8FF !important;">
+                        Usage
+                      </th>
+                      <th style="color: #2CA8FF !important;">
+                        Aliases
+                      </th>
+                    </thead>
+                    <tbody>
+                      <%themeConfig.commands.categoryFive.list.forEach((item)=>{%>
+                        <tr>
+                           <td><%=item.commandName%></td>
+                           <td><code><%=item.commandUsage%></code></td>
+                           <td><%=item.commandDescription%></td>
+                           <td><code><%=item.commandAlias%></code></td>
+                        </tr>
+                        <%})%>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class=" container-fluid" >
+          <nav>
+            <ul>
+              <li>
+                <a href="../">
+                  Dashboard
+                </a>
+              </li>
+              <li>
+                <a href="../manage/">
+                  Manage Guilds
+                </a>
+              </li>
+              <li>
+                <a href="#" class="bluey">
+                  Commands
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="copyright" id="copyright">
+            &copy;
+            <script>
+              document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
+            </script>, Created by <a href='<%=themeConfig.information.websiteUrl%>' target="_blank" class="bluey"><%=themeConfig.information.createdBy%></a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <!--   Core JS Files   -->
+  <script src="../assets/js/core/jquery.min.js"></script>
+  <script src="../assets/js/core/popper.min.js"></script>
+  <script src="../assets/js/core/bootstrap.min.js"></script>
+  <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- Chart JS -->
+  <script src="../assets/js/plugins/chartjs.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="../assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
+  <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
+  <script src="../assets/demo/demo.js"></script>
+  <script src="assets/node_modules/jquery/jquery.min.js"></script>
+  <script src="assets/node_modules/bootstrap/js/popper.min.js"></script>
+  <script src="assets/node_modules/bootstrap/js/bootstrap.min.js"></script>
+  <script src="js/perfect-scrollbar.jquery.min.js"></script>
+  <script src="js/waves.js"></script>
+  <script src="js/sidebarmenu.js"></script>
+  <script src="js/custom.min.js"></script>
+  <script src="assets/node_modules/peity/jquery.peity.min.js"></script>
+  <script src="assets/node_modules/peity/jquery.peity.init.js"></script>
+  <script>
+    //Excuse my poor js skills :/
+    if (<%= themeConfig.commands.categoryTwo.enabled %> === true) {
+      var element = document.getElementById("myDIV2");
+      element.classList.remove("hidden");
+    }
+          else if (<%= themeConfig.commands.categoryTwo.enabled %> === false) {
+      var element = document.getElementById("myDIV2");
+      element.classList.add("hidden");
+    }
+  </script>
+  <script>
+    if (<%= themeConfig.commands.categoryThree.enabled %> === true) {
+      var element = document.getElementById("myDIV3");
+      element.classList.remove("hidden");
+    }
+          else if (<%= themeConfig.commands.categoryThree.enabled %> === false) {
+      var element = document.getElementById("myDIV3");
+      element.classList.add("hidden");
+    }
+  </script>
+  <script>
+    if (<%= themeConfig.commands.categoryFour.enabled %> === true) {
+      var element = document.getElementById("myDIV4");
+      element.classList.remove("hidden");
+    }
+          else if (<%= themeConfig.commands.categoryFour.enabled %> === false) {
+      var element = document.getElementById("myDIV4");
+      element.classList.add("hidden");
+    }
+  </script>
+  <script>
+    if (<%= themeConfig.commands.categoryFive.enabled %> === true) {
+      var element = document.getElementById("myDIV5");
+      element.classList.remove("hidden");
+    }
+          else if (<%= themeConfig.commands.categoryFive.enabled %> === false) {
+      var element = document.getElementById("myDIV5");
+      element.classList.add("hidden");
+    }
+  </script>
+</body>
+</html>
