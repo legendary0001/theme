@@ -970,7 +970,7 @@ File: scss
   position: relative; }
 
 .container-fluid {
-background-image: url("https://st2.depositphotos.com/1755195/i/600/depositphotos_121458382-stock-photo-dark-blue-background-illustration.jpg") !important;
+background: url("https://st2.depositphotos.com/1755195/i/600/depositphotos_121458382-stock-photo-dark-blue-background-illustration.jpg")repeat 0 0 !important;
 
   padding: 25px 25px; }
 
