@@ -54,12 +54,10 @@ Global Styles
 @import url(../css/animate.css);
 * {
   outline: none; }
-.card-no-border {
 
+body {
 background-image: url("https://st2.depositphotos.com/1755195/i/600/depositphotos_121458382-stock-photo-dark-blue-background-illustration.jpg") !important;
 
-}  
-body {
   background: #fff;
   font-family: "Montserrat", sans-serif;
   margin: 0;
