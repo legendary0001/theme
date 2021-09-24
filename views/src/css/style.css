@@ -794,11 +794,12 @@ sidebar navigation
   display: block; }
 
 .sidebar-nav {
-  background: #fff;
+  background: #0d1625;
   padding: 15px 0 0 0px; }
   .sidebar-nav ul {
     margin: 0px;
-    padding: 0px; }
+    padding: 0px; 
+    background: #0d1625; }
     .sidebar-nav ul li {
       list-style: none; }
       .sidebar-nav ul li a {
@@ -1023,6 +1024,7 @@ background: #060818 !important;
           display: none; }
         .topbar .top-navbar .navbar-header .navbar-brand b {
           line-height: 70px;
+          background: #0d1625; 
           display: inline-block; }
     .topbar .top-navbar .navbar-nav > .nav-item > .nav-link {
       padding-left: 15px;
@@ -1134,6 +1136,7 @@ background: #060818 !important;
 
 .mini-sidebar .top-navbar .navbar-header {
   width: 70px;
+  background: #0d1625; 
   text-align: center;
   -ms-flex-negative: 0;
   flex-shrink: 0;
