@@ -761,7 +761,7 @@ Main sidebar
   top: 0px;
   z-index: 20;
   padding-top: 70px;
-  background: #060818;
+  background: #fff;
   border-right: 1px solid rgba(120, 130, 140, 0.13); }
 
 .fix-sidebar .left-sidebar {
@@ -848,7 +848,8 @@ sidebar navigation
       border-left: 3px solid #20aee3; }
   .sidebar-nav > ul > li {
     margin-bottom: 8px;
-    margin-top: 8px; }
+    margin-top: 8px; 
+    background: #0d1625; }
     .sidebar-nav > ul > li.active > a {
       color: #20aee3;
       font-weight: 500; }
@@ -872,7 +873,7 @@ When click on sidebar toggler and also for tablet
     width: 220px;
     padding-bottom: 10px;
     z-index: 1001;
-    background: #edf0f5;
+    background: #0d1625;
     display: none;
     padding-left: 1px; }
   .mini-sidebar .user-profile .profile-img {
@@ -911,7 +912,7 @@ When click on sidebar toggler and also for tablet
     width: 70px; }
   .mini-sidebar .sidebar-nav #sidebarnav > li:hover > a {
     width: 290px;
-    background: #edf0f5; }
+    background: #0d1625; }
     .mini-sidebar .sidebar-nav #sidebarnav > li:hover > a .hide-menu {
       display: inline; }
     .mini-sidebar .sidebar-nav #sidebarnav > li:hover > a .label {
