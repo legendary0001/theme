@@ -105,7 +105,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #455a64;
+  color: #FFFFFF;
   font-family: "Montserrat", sans-serif;
   font-weight: 400; }
 
@@ -1001,6 +1001,8 @@ background: #060818 !important;
   position: relative;
   z-index: 50; }
   .topbar .navbar-collapse {
+    background: #191e3b;
+
     padding: 0px;
     border-bottom: 1px solid rgba(120, 130, 140, 0.13); }
   .topbar .top-navbar {
@@ -1214,7 +1216,7 @@ Notify
  Horizontal-navabar
 *******************/
 .hdr-nav-bar .navbar {
-  background: #060818;
+  background: #191e3b;
   border-top: 1px solid rgba(120, 130, 140, 0.13);
   padding: 0 15px; }
   .hdr-nav-bar .navbar .navbar-nav > li {
