@@ -970,7 +970,7 @@ File: scss
   position: relative; }
 
 .container-fluid {
-background: #0d1625 !important;
+background: #060818 !important;
   padding: 25px 25px; }
 
 .card {
@@ -1214,7 +1214,7 @@ Notify
  Horizontal-navabar
 *******************/
 .hdr-nav-bar .navbar {
-  background: #ffffff;
+  background: #060818;
   border-top: 1px solid rgba(120, 130, 140, 0.13);
   padding: 0 15px; }
   .hdr-nav-bar .navbar .navbar-nav > li {
@@ -1262,11 +1262,11 @@ Notify
       margin-top: 5px;
       margin-bottom: 5px; }
       .page-titles .breadcrumb li a {
-        color: #67757c; }
+        color: #FFFFFF; }
     .page-titles .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
       content: "\f054";
       font-family: FontAwesome;
-      color: #a6b7bf;
+      color: #FFFFFF;
       font-size: 11px; }
     .page-titles .breadcrumb .breadcrumb-item.active {
       color: #263238;
@@ -1533,7 +1533,7 @@ ul#themecolors {
   position: absolute;
   right: 0;
   border-top: 1px solid rgba(120, 130, 140, 0.13);
-  background: #ffffff; }
+  background: #060818 }
 
 /*******************
  scrollbar
