@@ -54,7 +54,12 @@ Global Styles
 @import url(../css/animate.css);
 * {
   outline: none; }
-
+.align-self-center {
+background:  #0d1625 !important;
+}
+.card-body {
+background:  #0d1625;
+}
 body {
 
   background: #0d1625;
