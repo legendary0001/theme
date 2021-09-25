@@ -1037,7 +1037,7 @@ background: #060818 !important;
     background: #191e3b;
 
     padding: 0px;
-    border-bottom: 1px solid rgba(120, 130, 140, 0.13); }
+    border-bottom: 2px solid rgba(25,30,51); }
   .topbar .top-navbar {
     min-height: 70px;
     padding: 0px; }
