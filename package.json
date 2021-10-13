@@ -1,6 +1,6 @@
 {
   "name": "theme-legendarybot",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Discord-dashboard free theme.",
   "main": "index.js",
   "scripts": {
